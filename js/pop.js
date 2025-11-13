@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 跳转到根目录下的 download.html
       const isGitHubPages = window.location.hostname === 'aj300542.github.io';
       // 线上用绝对路径，本地用相对路径（../ 跳出 bios 目录）
-      const path = isGitHubPages ? '/emoji/downloadobj.html' : '../downloadobj.html';
+      const path = isGitHubPages ? '/emoji2/downloadobj.html' : '../downloadobj.html';
       window.location.href = `${path}?emoji=${encoded}`;
     }
   });
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const isGitHubPages = window.location.hostname === 'aj300542.github.io';
 
 // 字体路径：本地直接指向font目录，线上加/emoji前缀
-const fontPath = isGitHubPages ? '/emoji/font/NotoColorEmoji-Regular.ttf' : './font/NotoColorEmoji-Regular.ttf';
+const fontPath = isGitHubPages ? '/emoji2/font/NotoColorEmoji-Regular.ttf' : './font/NotoColorEmoji-Regular.ttf';
 
 // 动态创建@font-face样式并插入页面
 const fontStyle = document.createElement('style');
