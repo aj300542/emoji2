@@ -392,7 +392,7 @@ function loadEmojiSequence(codes) {
 
     filtered.forEach((code, index) => {
         const isGitHubPages = window.location.hostname === 'aj300542.github.io';
-        const basePath = isGitHubPages ? '/emoji/emoji_export/' : '../emoji_export/';
+        const basePath = isGitHubPages ? '/emoji2/emoji_export/' : '../emoji_export/';
         const mtlPath = `${basePath}${code}/${code}.mtl`;
         const objPath = `${basePath}${code}/${code}.obj`;
 
