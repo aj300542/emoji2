@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. 第一步：动态获取基础路径（必须先定义）
-    const basePath = window.location.pathname.includes('/emoji/') ? '/emoji' : '';
+    const basePath = window.location.pathname.includes('/emoji2/') ? '/emoji2' : '';
 
     // 2. 第二步：处理所有以 / 开头的站内 <a> 标签（放在这里！）
     const allSiteLinks = document.querySelectorAll('a[href^="/"]');
