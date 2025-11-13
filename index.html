@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>素材分类首页</title>
+    <link rel="stylesheet" href="js/emoji-font.css">
+    <script src="js/wakelock.js"></script>
+    <link rel="shortcut icon" href="js/emoji_128x128.ico">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom, #eaeaea, #d4d4d4);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 6vh;
+            font-size: 4vh;
+            color: #333;
+            animation: zoomIn 1.5s ease-out;
+            text-shadow: 0 0.5vh 1vh rgba(255, 255, 255, 0.3);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 6vh;
+            z-index: 1;
+            margin-bottom: 6vh;
+            /* 添加底部间距 */
+        }
+
+        .category-btn {
+            text-decoration: none;
+            display: inline-block;
+            padding: 3vh 6vh;
+            font-size: 2.5vh;
+            border: none;
+            border-radius: 2vh;
+            cursor: pointer;
+            background: #f4f4f4;
+            color: #444;
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+            transform: scaleY(0.8);
+            animation: riseUp 1.2s ease-out forwards;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .category-btn:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+            color: #000;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes riseUp {
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: center;
+            font-size: 7.5vh;
+            opacity: 0.16;
+            line-height: 1;
+            animation: fadeInIcons 2s ease-out;
+            z-index: 0;
+        }
+
+
+        @keyframes fadeInIcons {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+        }
+
+        .emoji-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 5vh;
+            animation: fall linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0.0;
+            }
+
+            100% {
+                transform: translateY(120vh) rotate(360deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>选择分类进入emoji素材世界 ✨</h1>
+    <h1>单击复制表情😊 双击下载3D文档😙</h1>
+    <div class="buttons">
+        <a href="bios.html" class="category-btn">🐾 生物</a>
+        <a href="objects.html" class="category-btn">🧺 物品</a>
+        <a href="knowledge.html" class="category-btn">📚 知识</a>
+    </div>
+    <div class="buttons">
+        <a href="index2.html" class="category-btn" target="_blank" rel="noopener noreferrer">📐 画画</a>
+        <a href="https://aj300542.github.io/download.html" class="category-btn" target="_blank"
+            rel="noopener noreferrer">🍎支持aj300542</a>
+        <a href="bios/expressions.html" class="category-btn">🤪 表情</a>
+    </div>
+    <div class="emoji-rain"></div>
+
+    <!-- 图标背景层 -->
+    <div class="floating-icons">
+        👨‍🏭 🥓 🛶 👩‍🎤 🌦️ 🍲 👨‍💻 🧍‍♂️ 🧃 🧛 🐡 🛬 🦈 👩‍🍼 🥗 🌋 🚙 🎋 🦹‍♀️ 🐻 🦭 🐯 🧂 🍩 🐍 🧑‍🎓 🧠 📓
+        🌴 🛸 🧷 🐭 🚤
+        🧞‍♂️ 🚁 🎈 🧥 🧹 🧧 🛳️ 🍙 🥐 🛎️ 🐸 👩‍✈️ 🧦 🐥 🦧 🛷 🐻‍❄️ 🧹 🪥 🌻 🥩 📚 📐 🌕 🍱 🧉 🥫 🐨 🌜 🌰 🪐 🐼 🧛 🧻
+        🌫️ 👨‍🌾 🎭
+        🍱 🌪️ 🍪 🛏️ 🍒 🍺 🐵 🧁 🍐 🧺 🎨 🌃 🐚 🧊 🪩 🧳 👩‍🔬 🧼 🫧 🐠 🍛 🧴 🧵 👨‍🍳 🐤 🍮 🦙 🦷 🍍 🧈 🎧 🍜 🪻 🛤️
+        🌾 👨‍🎓 🧼 👮‍♂️ ➕ ➖ ✖️ ➗ ♾️ √ ∑ π ∫ ∆ ≈ ≠
+        🍄 🔦 🎤 🎥 🌠 👩‍🦳 🐧 🧪 🔋 🕰️ 🐢 🚡 🥙 🍊 🧋 🍲 🧰 🐬 🥤 🍝 🦩 🐮 🌃 🪭 🧝‍♀️ 🌵 🧃 🫐 🦅 🍷 🐔 🧑‍🚀 🧃 ☕
+        🌵 🌑 🦸‍♂️ 🍹 🧹
+        🌳 📦 🌈 🥪 👩‍🎨 🥛 🌲 🥘 🛳️ 🐘 🪞 🧴 🍖 🧸 🧑‍🔧 🧊 🛬 👨‍💼 🍗 🐙 🧴 🥬 🦷 🧚 🪿 🥂 🪞 🦇 🎂 🧦 👩‍⚕️ 🫛 🌈
+        🐹 🛹 🎮 🧨 🐱 🦊
+        🍋 🍚 🐓 📐 🍔 🌹 🧄 👩‍💻 🍞 📱 🛴 📷 🥯 🎺 🍵 🍫 🦉 🧮 🚀 🧊 🥣 🛫 🧀 🕶️ 🍡 🌿 🪥 🍎 🚂 🧊 🐰 🚐 👨‍⚖️ 🍳 🧫
+        🧠 🚠 🌺 🌉 🌇 🐚 🎻
+
+    </div>
+    <script>
+        const icons = [
+            "🐶", "🐱", "🐻", "🐘", "🐼", "🦊", "🦁", "🐯", "🐮", "🐷", "🐵", "🦔", "🐭", "🐰", "🦅", "🕊️", "🐔", "🐧", "🐦", "🦜", "🦚", "🦩", "🦢",
+            "🦉", "🦤", "🐣", "🐥", "🐤", "🐟", "🐬", "🦈", "🦭", "🐠", "🐡", "🐙", "🦑",
+            "🧛", "🧟", "🧞‍♂️", "🧚", "🦹‍♀️", "👹", "🥷", "🐍", "🌑", "⚰️", "🔮", "🪞", "🧥",
+            "🍪", "🌜", "🔔", "🧦", "🕶️", "🎈", "📦", "🔌", "🛏️", "🕰️", "🧼", "🎧",
+            "👩‍🎓", "👨‍💼", "👩‍⚕️", "👨‍🍳", "👨‍🎓", "👩‍💻", "👨‍🔧", "👮‍♂️", "👩‍🚒", "👨‍🎤",
+            "➕", "➖", "✖️", "➗", "♾️", "√", "∑", "π", "∫", "∆", "≈", "≠",
+            "🪷", "🌸", "🌼", "🌻", "🌹", "🌷", "🌺", "🍄", "🍃", "🍂", "🌱", "🪴", "🪨", "🪵",
+            "📐", "📚", "📒", "🖌️", "🖍️", "🎨", "🖼️", "🧲", "💾", "🫧", "🧯",
+            "🚗", "🛴", "🚀", "🛸", "🛶", "🛹", "🚠", "🛬", "🛫", "🧳",
+            "🍙", "🍛", "🍜", "🍝", "🍲", "🥘", "🥙", "🌮", "🍕", "🍔", "🌯",
+            "🍵", "🥤", "☕", "🍶", "🥛", "🍷", "🍺", "🥂", "🍸", "🍾", "🧊"
+        ];
+
+        const container = document.querySelector('.emoji-rain');
+
+        for (let i = 0; i < 100; i++) {
+            const emoji = document.createElement('span');
+            emoji.classList.add('emoji');
+            emoji.textContent = icons[Math.floor(Math.random() * icons.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.animationDuration = 4 + Math.random() * 4 + 's';
+            emoji.style.fontSize = (3 + Math.random() * 4) + 'vh';
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(emoji);
+        }
+    </script>
+
+</body>
+
+</html>

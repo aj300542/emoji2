@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>🌿图标识别展示</title>
+    <link rel="stylesheet" href="js/emoji-font.css">
+    <style>
+        @font-face {
+            font-family: 'Nixiebold-bold';
+            src: url('font/Nixiebold-bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #fefdf8;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            width: 80vw;
+            height: calc(80vw / 1.78);
+            /* 16:9 aspect ratio */
+            border: 2px dashed #000000;
+            background: transparent;
+            z-index: 0;
+        }
+
+
+        .inputGroup {
+            display: flex;
+            align-items: center;
+            gap: 2vh;
+            /* 高度相关的间距 */
+        }
+
+        .inputGroup input {
+            flex: 1;
+            padding: 1.2vh 1.8vh;
+            font-size: 2vh;
+            border-radius: 1vh;
+            border: 0.2vh solid #ccc;
+        }
+
+        .inputGroup button {
+            padding: 1.2vh 1.8vh;
+            font-size: 2vh;
+            border: none;
+            border-radius: 1vh;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .inputGroup button:hover {
+            background-color: #45a049;
+        }
+
+        .controlGroup button {
+            padding: 1.2vh 1.8vh;
+            font-size: 2vh;
+            border: none;
+            border-radius: 1vh;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .controlGroup button:hover {
+            background-color: #327a36;
+        }
+
+
+        #fullScreenContainer {
+            position: relative;
+            background: transparent;
+        }
+
+        #iconCanvas {
+            position: relative;
+            z-index: 0;
+            background: transparent;
+        }
+
+        #timeOverlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20vh;
+            font-family: 'Nixiebold-bold', Arial, sans-serif;
+            color: rgb(0, 190, 32);
+            z-index: 99;
+            /* 更高的层级 */
+            text-shadow: 0 0 10px black;
+            display: none;
+        }
+
+        body.fullscreen-active>*:not(#iconCanvas):not(#timeOverlay) {
+            display: none !important;
+        }
+
+        .sceneLoaderPanel {
+            position: fixed;
+            left: 1vw;
+            /* 稍微也用 vw 让左右间距适应宽度 */
+            top: 10vh;
+            /* 相对屏幕高度往下偏移 */
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            /* 按钮之间的垂直间距 */
+            z-index: 20;
+        }
+
+        .sceneLoaderPanel button {
+            padding: 1.2vh 2vw;
+            /* 上下使用 vh，左右用 vw 提升响应式体验 */
+            font-size: 1.6vh;
+            /* 字体也随屏幕高度变化 */
+            cursor: pointer;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0.8vh;
+            transition: background-color 0.3s;
+        }
+
+        .sceneLoaderPanel button:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputGroup">
+        <input id="iconInput" placeholder="输入🐶🍎方向旋转右键取消" autocomplete="off" />
+        <button id="pasteBtn">粘贴</button>
+        <button onclick="saveSceneAsFile()">保存场景</button>
+        <label for="fileInput" class="loadBtn">载入场景</label>
+        <input type="file" id="fileInput" accept=".json" onchange="loadSceneFromFile(event)" style="display:none;" />
+        <button onclick="saveCanvasAsImageWithPicker()">保存图片</button>
+        <button onclick="enterFullScreen()">进入全屏</button>
+
+
+    </div>
+    <div id="fullScreenContainer">
+        <canvas id="iconCanvas"></canvas>
+        <div id="timeOverlay">16:54</div>
+    </div>
+
+
+
+    <div class="controlGroup">
+        <button onclick="saveInitialStates()">记录初始状态</button>
+        <button onclick="restoreInitialStates()">恢复初始状态</button>
+        <button onclick="animateMoveForSelected()">位移动画</button>
+        <button onclick="startSwingForSelected()">摇摆动画</button>
+        <button onclick="startRotationForSelected()">旋转动画</button>
+        <button onclick="startScaleForSelected()">缩放动画</button>
+        <button onclick="flipSelfHorizontal()">水平镜像</button> <!-- 🪞 新按钮 -->
+        <button onclick="fillSelectedElement()">选中元素铺满画布</button>
+        <button onclick="stopAnimationForSelected()">停止动画</button>
+
+    </div>
+    <div class="sceneLoaderPanel">
+        <button onclick="loadSceneByName('ape')">🐵 Ape 场景</button>
+        <button onclick="loadSceneByName('ufo')">🛸 UFO 场景</button>
+        <button onclick="loadSceneByName('city')">🏙️ 城市场景</button>
+        <button onclick="loadSceneByName('forest')">🌲 森林场景</button>
+    </div>
+    <script src="js/saveLoad.js"></script>
+    <script src="js/fullScreen.js"></script>
+    <script src="js/drawing.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        function loadSceneData(data) {
+            // 这里处理 JSON 数据并渲染到 canvas 上
+            console.log("载入的场景数据:", data);
+            // 你自定义的绘制逻辑应在这里处理 data
+        }
+
+        function loadSceneByName(name) {
+            const fileUrl = `sample/${name}.json`;
+            fetch(fileUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error("网络错误或文件不存在");
+                    return response.json();
+                })
+                .then(data => {
+                    const loadedElements = Array.isArray(data)
+                        ? data
+                        : Array.isArray(data.elements)
+                            ? data.elements
+                            : [];
+
+                    if (loadedElements.length === 0) {
+                        alert("⚠️ 场景数据为空");
+                        return;
+                    }
+
+                    setScene(loadedElements);      // ✅ 初始化场景
+                    saveInitialStates();           // ✅ 记录初始状态
+
+                })
+                .catch(error => {
+                    console.error("载入场景失败:", error);
+                });
+        }
+
+
+    </script>
+</body>
+
+</html>

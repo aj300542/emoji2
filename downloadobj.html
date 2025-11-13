@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <title>源代码下载</title>
+  <link rel="stylesheet" href="../js/emoji-font.css">
+  <style>
+    @font-face {
+      font-family: 'SegoeEmojiOld';
+      src: url('../font/SEGUIEMJ.TTF') format('truetype');
+      font-display: swap;
+    }
+
+    body {
+      font-family: 'SegoeEmojiOld', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #000;
+      color: #fb7c00;
+      font-family: 'Nixiebold-mini', Arial, sans-serif;
+      letter-spacing: 0.4em;
+      line-height: 1.5em;
+      text-align: center;
+      margin: 0;
+      padding: 0 2vh;
+    }
+
+    h2 {
+      font-size: 4vh;
+      margin-bottom: 2vh;
+    }
+
+    /* 新增并排容器样式 */
+    .emoji-gif-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5vh;
+      /* 两个元素之间的间距 */
+      margin: 2vh 0;
+      width: 100%;
+      max-width: 80vh;
+      /* 限制最大宽度避免溢出 */
+    }
+
+    #selected-emoji {
+      font-family: 'SegoeEmojiOld', 'Segoe UI', sans-serif;
+      font-size: 20vh;
+      /* 适当放大表情符号 */
+      margin: 0;
+      /* 清除原有margin */
+      flex-shrink: 0;
+      /* 防止缩小 */
+    }
+
+    /* 修改GIF预览样式：去掉边框、透明背景 */
+    #gif-preview {
+      margin: 0;
+      width: 30vh;
+      height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      /* 透明背景 */
+      flex-shrink: 0;
+      /* 防止缩小 */
+    }
+
+    #gif-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    #gif-preview .error-tip {
+      font-size: 2vh;
+      color: #ff6b35;
+      letter-spacing: 0.2em;
+    }
+
+    .cover-small-left {
+      position: absolute;
+      top: 5vh;
+      right: 5vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 9;
+    }
+
+    .cover-small-left img {
+      width: 20vh;
+      border-radius: 2vh;
+      margin-top: 1vh;
+    }
+
+    .qr-group {
+      display: flex;
+      gap: 5vh;
+      margin-top: 4vh;
+    }
+
+    .qr-group img {
+      height: 30vh;
+      border-radius: 2vh;
+    }
+
+    .download-box {
+      margin-top: 3vh;
+      font-size: 2.5vh;
+      width: 100%;
+      max-width: 80vh;
+    }
+
+    .download-box a {
+      display: inline-block;
+      margin-top: 1vh;
+      padding: 1vh 3vh;
+      background-color: #fb7c00;
+      color: #000;
+      border-radius: 1vh;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 2vh;
+    }
+
+    .download-box a:last-child {
+      margin-right: 0;
+      /* 最后一个链接去掉右边距 */
+    }
+
+    .download-box a:hover {
+      background-color: #ffa733;
+    }
+
+    /* 适配小屏幕 */
+    @media (max-width: 768px) {
+      .emoji-gif-container {
+        flex-direction: column;
+        /* 小屏幕下恢复垂直排列 */
+        gap: 2vh;
+      }
+
+      #selected-emoji {
+        font-size: 15vh;
+      }
+
+      #gif-preview {
+        width: 25vh;
+        height: 25vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cover-small-left">
+    <div>主页集锦</div>
+    <a href="https://aj300542.github.io" target="_blank">
+      <img src="img/1711604188130.jpg" alt="返回主页">
+    </a>
+  </div>
+
+  <h2>源代码下载</h2>
+
+  <!-- 新增并排容器 -->
+  <div class="emoji-gif-container">
+    <div id="selected-emoji">🔧</div>
+    <div id="gif-preview">
+      <div class="error-tip">加载中...</div>
+    </div>
+  </div>
+
+  <p>你的支持是我前进的动力，谢谢支持</p>
+
+  <div class="download-box" id="download-box">
+    <!-- 下载信息将在 JS 中填充 -->
+  </div>
+
+  <div class="qr-group">
+    <img src="img/mm_facetoface_collect_qrcode_1711603406115.png" alt="二维码1">
+    <img src="img/luohan.png" alt="二维码2">
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const emoji = params.get('emoji');
+    const emojiEl = document.getElementById('selected-emoji');
+    const downloadBox = document.getElementById('download-box');
+    const gifPreview = document.getElementById('gif-preview');
+
+    if (emoji) {
+      const decoded = decodeURIComponent(emoji);
+      emojiEl.textContent = decoded;
+
+      const codes = [...decoded].map(c => 'U+' + c.codePointAt(0).toString(16).toUpperCase());
+      const filtered = codes.filter(c => c !== 'U+200D' && c !== 'U+FE0F');
+      const code = filtered[0];
+      const objPath = `emoji_export/${code}/${code}.obj`;
+      const mtlPath = `emoji_export/${code}/${code}.mtl`;
+      const gifPath = `emoji_export/${code}/${code}.gif`;
+
+      // 动态加载并显示GIF
+      const gifImg = document.createElement('img');
+      gifImg.src = gifPath;
+      gifImg.alt = `${code} 的GIF预览`;
+      gifImg.onerror = () => {
+        gifPreview.innerHTML = '<div class="error-tip">GIF预览失败</div>';
+      };
+      gifImg.onload = () => {
+        gifPreview.innerHTML = '';
+        gifPreview.appendChild(gifImg);
+      };
+
+      // 加载emoji名称映射
+      fetch('emojiNames.json')
+        .then(response => response.json())
+        .then(mapping => {
+          const names = mapping[decoded] || ['未知物品'];
+          const nameLine = names.join('，');
+          downloadBox.innerHTML = `
+          <div>物品名称：<strong>${nameLine}</strong></div>
+          <div>OBJ 文件路径：<code>${objPath}</code></div>
+          <div>MTL 文件路径：<code>${mtlPath}</code></div>
+          <div>GIF 文件路径：<code>${gifPath}</code></div>
+          <div style="margin-top:2vh;">
+            <a href="${objPath}" download>立即下载 OBJ 文件</a>
+            <a href="${mtlPath}" download>立即下载 MTL 文件</a>
+            <a href="${gifPath}" download>立即下载 GIF 文件</a>
+          </div>
+        `;
+        })
+        .catch(err => {
+          console.error('无法加载emoji名称映射文件', err);
+          downloadBox.innerHTML = `
+          <div>物品名称：<strong>未知物品</strong></div>
+          <div>OBJ 文件路径：<code>${objPath}</code></div>
+          <div>MTL 文件路径：<code>${mtlPath}</code></div>
+          <div>GIF 文件路径：<code>${gifPath}</code></div>
+          <div style="margin-top:2vh;">
+            <a href="${objPath}" download>立即下载 OBJ 文件</a>
+            <a href="${mtlPath}" download>立即下载 MTL 文件</a>
+            <a href="${gifPath}" download>立即下载 GIF 文件</a>
+          </div>
+        `;
+        });
+    } else {
+      gifPreview.innerHTML = '<div class="error-tip">未指定emoji</div>';
+      downloadBox.innerHTML = `<div>未指定 emoji，无法生成下载链接。</div>`;
+    }
+  </script>
+
+</body>
+
+</html>

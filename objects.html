@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>物品素材展示</title>
+  <link rel="stylesheet" href="js/emoji-font.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #fffbe6, #f7f1c6);
+      color: #444;
+      padding: 5vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4vh;
+      margin-bottom: 4vh;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .tags {
+      text-align: center;
+      margin-bottom: 3vh;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 1vh;
+      padding: 1vh 2vh;
+      background: #ffe082;
+      border-radius: 3vh;
+      font-size: 2vh;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      background: #ffd54f;
+      transform: scale(1.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15vh, 1fr));
+      gap: 3vh;
+      padding-top: 2vh;
+    }
+
+    .item {
+      background: #ffffff;
+      border-radius: 2vh;
+      text-align: center;
+      padding: 2vh;
+      box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+
+    .item:hover {
+      transform: scaleY(1.05);
+    }
+
+    .char {
+      font-size: 6vh;
+      margin-bottom: 1vh;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scaleY(0.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>物品素材展示 🧺</h1>
+
+  <div class="tags">
+    <a class="tag" href="index.html">返回主页</a>
+    <a class="tag" href="objects/media.html">多媒体类</a>
+    <a class="tag" href="objects/electronics.html">数码电器</a>
+    <a class="tag" href="objects/officeSupplies.html">办公用品</a>
+    <a class="tag" href="objects/tools.html">工具</a>
+    <a class="tag" href="objects/dailyItems.html">日常用品</a>
+    <a class="tag" href="objects/furniture.html">家具</a>
+    <a class="tag" href="objects/food.html">食品</a>
+    <a class="tag" href="objects/transportation.html">交通</a>
+    <a class="tag" href="objects/architecture.html">建筑</a>
+    <a class="tag" href="objects/cosmos.html">星空</a>
+    <a class="tag" href="objects/wearables.html">穿戴</a>
+    <a class="tag" href="objects/artworks.html">艺术品</a>
+    <a class="tag" href="objects/nature.html">自然景观</a>
+    <a class="tag" href="objects/game.html">游戏</a>
+    <a class="tag" href="https://aj300542.github.io/download" target="_blank">捐赠</a>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const jsonpath = "json/objects.json"; // ✅ 路径作为字符串
+  </script>
+  <div id="popup" style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        padding: 5vh;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2vh;
+        box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
+        text-align: center;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        font-size: 5vh;
+        pointer-events: none;
+        ">
+    <div id="popup-icon" style="font-size:45vh;"></div>
+    <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+  </div>
+  <script src="js/jsonpath.js"></script>
+  <script src="js/pop.js"></script>
+  <script type="importmap">
+      {
+      "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+          "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+      }
+      }
+  </script>
+  <script type="module" src="js/emojiobjs.js"></script>
+  <script>
+
+  </script>
+
+
+</body>
+
+</html>

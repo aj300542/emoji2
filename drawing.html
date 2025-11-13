@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>🌿图标识别展示</title>
+    <link rel="stylesheet" href="js/emoji-font.css">
+
+    <style>
+        @font-face {
+            font-family: 'Nixiebold-bold';
+            src: url('font/Nixiebold-bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #fefdf8;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            width: 80vw;
+            height: calc(80vw / 1.78);
+            /* 默认横屏16:9比例 */
+            border: 2px dashed #000;
+            background: transparent;
+            z-index: 0;
+        }
+
+        .inputGroup {
+            display: flex;
+            align-items: center;
+            gap: 2vh;
+        }
+
+        .inputGroup input,
+        .inputGroup button,
+        .controlGroup button {
+            font-size: 2vh;
+            padding: 1.2vh 1.8vh;
+            border-radius: 1vh;
+            border: 0.2vh solid #ccc;
+        }
+
+        .inputGroup input {
+            flex: 1;
+        }
+
+        .inputGroup button,
+        .controlGroup button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            font-family: 'Nixiebold-bold', Arial, sans-serif;
+        }
+
+        .inputGroup button:hover,
+        .controlGroup button:hover {
+            background-color: #327a36;
+        }
+
+        #fullScreenContainer {
+            position: relative;
+            background: transparent;
+        }
+
+        #iconCanvas {
+            position: relative;
+            z-index: 0;
+        }
+
+        #timeOverlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15vw;
+            font-family: 'Nixiebold-bold', Arial, sans-serif;
+            color: rgb(0, 190, 32);
+            z-index: 99;
+            text-shadow: 0 0 10px black;
+            display: none;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        body.fullscreen-active>*:not(#iconCanvas):not(#timeOverlay) {
+            display: none !important;
+        }
+
+        .sceneLoaderPanel {
+            position: fixed;
+            left: 1vw;
+            top: 10vh;
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            z-index: 20;
+        }
+
+        .sceneLoaderPanel button {
+            padding: 1.2vh 2vw;
+            font-size: 1.6vh;
+            cursor: pointer;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0.8vh;
+            transition: background-color 0.3s;
+        }
+
+        .sceneLoaderPanel button:hover {
+            background-color: #eee;
+        }
+
+        /* 📱 竖屏优化 */
+        @media screen and (orientation: portrait) {
+            canvas {
+                width: 90vw;
+                height: calc(90vw / 1.2);
+                /* 更适合竖屏比例 */
+            }
+
+            .sceneLoaderPanel {
+                left: 2vw;
+                top: 5vh;
+            }
+        }
+
+        /* 💻 横屏优化 */
+        @media screen and (orientation: landscape) {
+            canvas {
+                width: 80vw;
+                height: calc(80vw / 1.78);
+                /* 横屏16:9 */
+            }
+
+            .sceneLoaderPanel {
+                left: 1vw;
+                top: 10vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputGroup">
+        <input id="iconInput" placeholder="输入🐶🍎方向旋转右键取消" autocomplete="off" />
+        <button id="pasteBtn">粘贴</button>
+        <button onclick="saveSceneAsFile()">保存场景</button>
+        <label for="fileInput" class="loadBtn">载入场景</label>
+        <input type="file" id="fileInput" accept=".json" onchange="loadSceneFromFile(event)" style="display:none;" />
+        <button onclick="saveCanvasAsImageWithPicker()">保存图片</button>
+        <button id="undoBtn">⬅️上一步</button>
+        <button id="redoBtn">➡️下一步</button>
+        <button onclick="enterFullScreen()">进入全屏</button>
+    </div>
+    <div id="fullScreenContainer">
+        <canvas id="iconCanvas"></canvas>
+        <div id="timeOverlay">16:54</div>
+    </div>
+    <div class="controlGroup">
+        <button onclick="saveInitialStates()">1记录初始状态</button>
+        <button onclick="restoreInitialStates()">2恢复初始状态</button>
+        <button onclick="animateMoveForSelected()">3位移动画</button>
+        <button onclick="startSwingForSelected()">4摇摆动画</button>
+        <button onclick="startRotationForSelected()">5旋转动画</button>
+        <button onclick="startScaleForSelected()">6缩放动画</button>
+        <button onclick="flipSelfHorizontal()">7水平镜像</button>
+        <button onclick="fillSelectedElement()">8选中元素铺满画布</button>
+        <button onclick="stopAnimationForSelected()">9停止动画</button>
+        <button id="sendToBackBtn">置底</button>
+        <button id="mergeSelectedBtn">合并</button>
+    </div>
+    <div class="sceneLoaderPanel">
+        <button onclick="loadSceneByName('ape')">🐵 动物世界</button>
+        <button onclick="loadSceneByName('food')">🍰 美食图鉴</button>
+        <button onclick="loadSceneByName('drink')">🍸 饮料图鉴</button>
+        <button onclick="loadSceneByName('ufo')">🛸 太空图鉴</button>
+        <button onclick="loadSceneByName('music')">🏞️ 音乐图鉴</button>
+        <button onclick="loadSceneByName('picture3')">🪭 维纳斯</button>
+        <button onclick="loadSceneByName('picture4')">♥️ 红心游戏</button>
+        <button onclick="loadSceneByName('picture5')">👽 发现外星人</button>
+        <button onclick="loadSceneByName('picture6')">🧠 头脑风暴</button>
+        <button onclick="loadSceneByName('picture7')">🌧️ 雨中漫步</button>
+        <button onclick="loadSceneByName('picture8')">🚧 城市边缘</button>
+        <button onclick="loadSceneByName('culture')">🪁 文化图鉴</button>
+    </div>
+    <script>
+        window.elements = window.elements || [];
+        window.groupElements = window.groupElements || [];
+
+        let globalStep = 0;
+
+        // 🧱 初始化所有元素
+        elements.forEach(el => {
+            el.rotationBase = 0;   // 由旋转控制
+            el.rotationSwing = 0;  // 由摇摆控制
+            el.rotation = 0;       // 总合用于绘制（可选）
+        });
+        groupElements.forEach(group => {
+            group.rotationBase = 0;
+            group.rotationSwing = 0;
+            group.rotation = 0;
+            group.isSwinging = false;
+            group.isMoving = false;
+            group.animationHandle = null;
+            group.name = group.name || `Group_${Date.now()}`; // 如果需要调试命名
+            // 🆕 加入下面这两行：
+            group.swingStep = 0;
+            group.swingDirection = 1;
+        });
+    </script>
+    <script src="js/history.js"></script>
+    <script src="js/saveLoad.js"></script>
+    <script src="js/fullScreen.js"></script>
+    <script src="js/drawing.js"></script>
+    <script type="module" src="js/interaction.js"></script>
+
+    <script src="js/animation.js"></script>
+    <script>
+        function loadSceneData(data) {
+            // 这里处理 JSON 数据并渲染到 canvas 上
+            console.log("载入的场景数据:", data);
+            // 你自定义的绘制逻辑应在这里处理 data
+        }
+
+        function loadSceneByName(name) {
+            const fileUrl = `sample/${name}.json`;
+            fetch(fileUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error("网络错误或文件不存在");
+                    return response.json();
+                })
+                .then(data => {
+                    const loadedElements = Array.isArray(data)
+                        ? data
+                        : Array.isArray(data.elements)
+                            ? data.elements
+                            : [];
+
+                    if (loadedElements.length === 0) {
+                        alert("⚠️ 场景数据为空");
+                        return;
+                    }
+
+                    setScene(loadedElements);      // ✅ 初始化场景
+                    saveInitialStates();           // ✅ 记录初始状态
+
+                })
+                .catch(error => {
+                    console.error("载入场景失败:", error);
+                });
+        }
+        document.addEventListener('keydown', event => {
+            switch (event.key) {
+                case '1': saveInitialStates(); break;
+                case '2': restoreInitialStates(); break;
+                case '3': animateMoveForSelected(); break;
+                case '4': startSwingForSelected(); break;
+                case '5': startRotationForSelected(); break;
+                case '6': startScaleForSelected(); break;
+                case '7': flipSelfHorizontal(); break;
+                case '8': fillSelectedElement(); break;
+                case '9': stopAnimationForSelected(); break;
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
