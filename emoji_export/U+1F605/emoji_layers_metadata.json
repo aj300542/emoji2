@@ -1,0 +1,136 @@
+{
+  "emoji_char": "😅",
+  "emoji_codepoints": [
+    "U+1F605"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        24900
+      ],
+      "glyph_names": [
+        "glyph14111"
+      ],
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        24901
+      ],
+      "glyph_names": [
+        "glyph14112"
+      ],
+      "color": {
+        "r": 129,
+        "g": 212,
+        "b": 250
+      },
+      "hex": "#81d4fa",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 24899,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24900,
+      "layer_index_local": 1,
+      "glyph_name": "glyph14111",
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 24901,
+      "layer_index_local": 2,
+      "glyph_name": "glyph14112",
+      "color": {
+        "r": 129,
+        "g": 212,
+        "b": 250
+      },
+      "hex": "#81d4fa",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 24902,
+      "layer_index_local": 3,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 24899,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015916048AD0>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24902,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015916048BC0>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

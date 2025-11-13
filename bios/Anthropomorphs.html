@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拟人化角色展示</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="../js/styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+            padding: 5vh;
+            color: #444;
+        }
+
+        h1 {
+            font-size: 4vh;
+            text-align: center;
+            margin-bottom: 3vh;
+            animation: riseIn 0.8s ease-out;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18vh, 1fr));
+            gap: 3vh;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 2vh;
+            text-align: center;
+            padding: 2vh;
+            box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            animation: bounce 3s infinite ease-in-out;
+            transition: transform 0.4s ease;
+        }
+
+        .item:hover {
+            transform: rotate(-3deg) scaleY(1.05);
+        }
+
+        .char {
+            font-size: 6vh;
+            display: block;
+            margin-bottom: 1vh;
+        }
+
+        .label {
+            font-size: 2.5vh;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-1vh);
+            }
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(3vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>拟人化角色展示 ✨</h1>
+    <div class="tags">
+        <a class="tag" href="../bios.html">返回主页</a>
+        <a class="tag" href="https://aj300542.github.io/download" target="_blank">捐赠</a>
+    </div>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const jsonpath = "../json/anthropomorphs.json"; // ✅ 路径作为字符串
+    </script>
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+    <script src="../js/jsonpath.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+</body>
+
+</html>

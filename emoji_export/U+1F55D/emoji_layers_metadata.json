@@ -1,0 +1,91 @@
+{
+  "emoji_char": "🕝",
+  "emoji_codepoints": [
+    "U+1F55D"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        23376
+      ],
+      "glyph_names": [
+        "glyph13441"
+      ],
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 23375,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23376,
+      "layer_index_local": 1,
+      "glyph_name": "glyph13441",
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "matrix": [
+        [
+          0.7068939208984375,
+          0.7071990966796875,
+          -62.561004638671875
+        ],
+        [
+          -0.7071990966796875,
+          0.7068939208984375,
+          557.3262023925781
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 23377,
+      "layer_index_local": 2,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 23375,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE5E80>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23377,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE5F10>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

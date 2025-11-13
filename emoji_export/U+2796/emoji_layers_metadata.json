@@ -1,0 +1,146 @@
+{
+  "emoji_char": "➖",
+  "emoji_codepoints": [
+    "U+2796"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        52761
+      ],
+      "glyph_names": [
+        "glyph24775"
+      ],
+      "color": {
+        "r": 70,
+        "g": 76,
+        "b": 79
+      },
+      "hex": "#464c4f",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        52762
+      ],
+      "glyph_names": [
+        "glyph24776"
+      ],
+      "color": {
+        "r": 97,
+        "g": 98,
+        "b": 102
+      },
+      "hex": "#616266",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 2,
+      "merged_layer_indices": [
+        52763
+      ],
+      "glyph_names": [
+        "glyph24777"
+      ],
+      "color": {
+        "r": 154,
+        "g": 154,
+        "b": 154
+      },
+      "hex": "#9a9a9a",
+      "svg_file": "emoji_layer_02.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 52761,
+      "layer_index_local": 0,
+      "glyph_name": "glyph24775",
+      "color": {
+        "r": 70,
+        "g": 76,
+        "b": 79
+      },
+      "hex": "#464c4f",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 52762,
+      "layer_index_local": 1,
+      "glyph_name": "glyph24776",
+      "color": {
+        "r": 97,
+        "g": 98,
+        "b": 102
+      },
+      "hex": "#616266",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 52763,
+      "layer_index_local": 2,
+      "glyph_name": "glyph24777",
+      "color": {
+        "r": 154,
+        "g": 154,
+        "b": 154
+      },
+      "hex": "#9a9a9a",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": []
+}

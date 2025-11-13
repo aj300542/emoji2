@@ -1,0 +1,74 @@
+{
+  "emoji_char": "🅾",
+  "emoji_codepoints": [
+    "U+1F17E"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        88
+      ],
+      "glyph_names": [
+        "glyph04077"
+      ],
+      "color": {
+        "r": 250,
+        "g": 250,
+        "b": 250
+      },
+      "hex": "#fafafa",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 87,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 88,
+      "layer_index_local": 1,
+      "glyph_name": "glyph04077",
+      "color": {
+        "r": 250,
+        "g": 250,
+        "b": 250
+      },
+      "hex": "#fafafa",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 87,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x00000159149F2D50>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

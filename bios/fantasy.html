@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>幻想世界展示</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="../js/styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #f3e5f5, #d1c4e9);
+            padding: 5vh;
+            color: #4a148c;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4vh;
+            margin-bottom: 4vh;
+            animation: shimmer 2s ease-in-out;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20vh, 1fr));
+            gap: 4vh;
+        }
+
+        .item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 2vh;
+            text-align: center;
+            padding: 2vh;
+            box-shadow: 0 0 2vh #ce93d8;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+            animation: pulse 3s infinite ease-in-out;
+            transition: transform 0.4s ease;
+        }
+
+        .item:hover {
+            transform: rotate(-2deg) scale(1.07);
+        }
+
+        .char {
+            font-size: 6vh;
+            margin-bottom: 1vh;
+        }
+
+        .label {
+            font-size: 2.5vh;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 2vh #ce93d8;
+            }
+
+            50% {
+                box-shadow: 0 0 2vh #ba68c8;
+            }
+        }
+
+        @keyframes shimmer {
+            from {
+                opacity: 0;
+                transform: translateY(2vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>幻想生物展示 ✨</h1>
+    <div class="tags">
+        <a class="tag" href="../bios.html">返回主页</a>
+        <a class="tag" href="https://aj300542.github.io/download" target="_blank">捐赠</a>
+    </div>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const jsonpath = "../json/fantasy.json"; // ✅ 路径作为字符串
+    </script>
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+    <script src="../js/jsonpath.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+</body>
+
+</html>

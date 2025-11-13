@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>角色展示页</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #e0f7fa, #b2ebf2);
+            padding: 5vh;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4vh;
+            margin-bottom: 3vh;
+            animation: popTitle 1s ease-in-out;
+        }
+
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18vh, 1fr));
+            gap: 3vh;
+        }
+
+        .item {
+            background: white;
+            border-radius: 2vh;
+            padding: 2vh;
+            text-align: center;
+            box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            animation: floatUp 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scaleY(1.08) rotate(1deg);
+        }
+
+        .char {
+            font-size: 6vh;
+            margin-bottom: 1vh;
+            animation: blink 2s infinite;
+        }
+
+        .label {
+            font-size: 2.5vh;
+        }
+
+        @keyframes popTitle {
+            from {
+                transform: scaleY(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatUp {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-1vh);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>角色展示 👥</h1>
+    <div class="category-buttons">
+        <button id="bios">返回生物主页</a>
+            <button onclick="renderCategory('face')">人脸系列</button>
+            <button onclick="renderCategory('sports')">运功系列</button>
+            <button onclick="renderCategory('urban')">城市居民</button>
+            <button onclick="renderCategory('warrior')">战士系</button>
+            <button onclick="renderCategory('mage')">法师系</button>
+            <button onclick="renderCategory('support')">辅助系</button>
+            <button onclick="renderCategory('shadow')">暗影系</button>
+            <button onclick="renderCategory('bodypart')">身体系</button>
+            <button id="opennew">捐赠</a>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+
+    <!-- 展示区 -->
+    <div id="gallery" class="gallery"></div>
+
+    <!-- 弹窗 -->
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+
+    <!-- 主脚本：加载分类数据并渲染 -->
+    <script>
+        const JSON_BASE_PATH = "../json/characters/"; // ✅ 路径前缀抽离
+        const JSON_1 = "face";
+
+
+    </script>
+
+    <script src="../js/renderCategory.js"></script>
+    <script src="../js/button.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+</body>
+
+</html>

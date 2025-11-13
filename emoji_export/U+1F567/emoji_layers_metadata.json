@@ -1,0 +1,121 @@
+{
+  "emoji_char": "🕧",
+  "emoji_codepoints": [
+    "U+1F567"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        23408,
+        23409
+      ],
+      "glyph_names": [
+        "glyph13441",
+        "glyph13440"
+      ],
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 2
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 23407,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23408,
+      "layer_index_local": 1,
+      "glyph_name": "glyph13441",
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "matrix": [
+        [
+          0.96600341796875,
+          -0.259002685546875,
+          109.74699401855469
+        ],
+        [
+          0.259002685546875,
+          0.96600341796875,
+          -154.25999450683594
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 23409,
+      "layer_index_local": 2,
+      "glyph_name": "glyph13440",
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          -271.875
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 23410,
+      "layer_index_local": 3,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 23407,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE6F00>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23410,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE6FF0>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

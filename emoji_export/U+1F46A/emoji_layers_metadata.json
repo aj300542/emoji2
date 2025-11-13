@@ -1,0 +1,45 @@
+{
+  "emoji_char": "👪",
+  "emoji_codepoints": [
+    "U+1F46A"
+  ],
+  "layers": [],
+  "original_layers": [
+    {
+      "layer_index_global": 16721,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 16722,
+      "layer_index_local": 1,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 16721,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915847D70>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 16722,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915847DD0>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

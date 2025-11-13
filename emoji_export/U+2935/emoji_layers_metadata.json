@@ -1,0 +1,119 @@
+{
+  "emoji_char": "⤵",
+  "emoji_codepoints": [
+    "U+2935"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        52801
+      ],
+      "glyph_names": [
+        "glyph24809"
+      ],
+      "color": {
+        "r": 250,
+        "g": 250,
+        "b": 250
+      },
+      "hex": "#fafafa",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        52802
+      ],
+      "glyph_names": [
+        "glyph04009"
+      ],
+      "color": {
+        "r": 180,
+        "g": 225,
+        "b": 237
+      },
+      "hex": "#b4e1ed",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 52800,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 52801,
+      "layer_index_local": 1,
+      "glyph_name": "glyph24809",
+      "color": {
+        "r": 250,
+        "g": 250,
+        "b": 250
+      },
+      "hex": "#fafafa",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          738.25
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 52802,
+      "layer_index_local": 2,
+      "glyph_name": "glyph04009",
+      "color": {
+        "r": 180,
+        "g": 225,
+        "b": 237
+      },
+      "hex": "#b4e1ed",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          4.3119964599609375
+        ],
+        [
+          0.0,
+          1.0,
+          0.375
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 52800,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015917A84C20>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

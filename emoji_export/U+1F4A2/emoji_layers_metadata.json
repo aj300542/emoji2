@@ -1,0 +1,146 @@
+{
+  "emoji_char": "💢",
+  "emoji_codepoints": [
+    "U+1F4A2"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        21160,
+        21161,
+        21162,
+        21163
+      ],
+      "glyph_names": [
+        "glyph11911",
+        "glyph11911",
+        "glyph11912",
+        "glyph11912"
+      ],
+      "color": {
+        "r": 244,
+        "g": 67,
+        "b": 54
+      },
+      "hex": "#f44336",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 4
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 21160,
+      "layer_index_local": 0,
+      "glyph_name": "glyph11911",
+      "color": {
+        "r": 244,
+        "g": 67,
+        "b": 54
+      },
+      "hex": "#f44336",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21161,
+      "layer_index_local": 1,
+      "glyph_name": "glyph11911",
+      "color": {
+        "r": 244,
+        "g": 67,
+        "b": 54
+      },
+      "hex": "#f44336",
+      "matrix": [
+        [
+          -1.0,
+          0.0,
+          1278.843994140625
+        ],
+        [
+          0.0,
+          -1.0,
+          700.0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21162,
+      "layer_index_local": 2,
+      "glyph_name": "glyph11912",
+      "color": {
+        "r": 244,
+        "g": 67,
+        "b": 54
+      },
+      "hex": "#f44336",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21163,
+      "layer_index_local": 3,
+      "glyph_name": "glyph11912",
+      "color": {
+        "r": 244,
+        "g": 67,
+        "b": 54
+      },
+      "hex": "#f44336",
+      "matrix": [
+        [
+          -1.0,
+          0.0,
+          1275.0
+        ],
+        [
+          0.0,
+          -1.0,
+          701.593994140625
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": []
+}

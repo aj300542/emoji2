@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表情角色展示</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #ffe0b2);
+            padding: 5vh;
+            color: #444;
+        }
+
+        h1 {
+            font-size: 4vh;
+            text-align: center;
+            margin-bottom: 3vh;
+            animation: riseIn 0.8s ease-out;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18vh, 1fr));
+            gap: 3vh;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 2vh;
+            text-align: center;
+            padding: 2vh;
+            box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1);
+            clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
+            animation: pulse 3s infinite ease-in-out;
+            transition: transform 0.4s ease;
+        }
+
+        .item:hover {
+            transform: rotate(1deg) scaleY(1.1);
+        }
+
+        .char {
+            font-size: 6vh;
+            display: block;
+            margin-bottom: 1vh;
+        }
+
+        .label {
+            font-size: 2.5vh;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(3vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>表情角色展示 😄</h1>
+    <div class="category-buttons">
+        <button id="backHome">返回主页</button>
+        <button onclick="renderCategory('smilelove')">微笑和爱心</button>
+        <button onclick="renderCategory('calm')">平静</button>
+        <button onclick="renderCategory('surprisesadangry')">惊讶/悲伤/愤怒</button>
+        <button onclick="renderCategory('animalfantasy')">动物/幻想/搞怪</button>
+        <button id="opennew">捐赠</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+
+    <!-- 弹窗 -->
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+
+    <!-- 主脚本：加载分类数据并渲染 -->
+    <script>
+        const JSON_BASE_PATH = "../json/expressions/"; // ✅ 路径前缀抽离
+        const JSON_1 = "smilelove";
+
+
+    </script>
+
+    <script src="../js/renderCategory.js"></script>
+    <script src="../js/button.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+</body>
+
+</html>

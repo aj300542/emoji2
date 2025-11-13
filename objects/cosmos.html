@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星空类对象 - Cosmos</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="../js/styles.css" />
+</head>
+
+<body>
+    <h1>星空类对象 🌌</h1>
+    <div class="tags">
+        <a class="tag" href="../objects.html">返回物品主页</a>
+        <a class="tag" href="https://aj300542.github.io/download" target="_blank">捐赠</a>
+    </div>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const jsonpath = "../json/cosmos.json"; // ✅ 路径作为字符串
+    </script>
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+    <script src="../js/jsonpath.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+</body>
+
+</html>

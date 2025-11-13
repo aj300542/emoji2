@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'SegoeEmojiOld';
+    src: url('../font/NotoColorEmoji-Regular.TTF') format('truetype');
+    /* 回到 font 文件夹 */
+    font-display: swap;
+}
+
+body {
+    font-family: 'SegoeEmojiOld', 'Segoe UI', sans-serif;
+}
+
+.char {
+    font-family: 'SegoeEmojiOld', 'Segoe UI Emoji', sans-serif;
+}

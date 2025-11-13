@@ -1,0 +1,119 @@
+{
+  "emoji_char": "☑",
+  "emoji_codepoints": [
+    "U+2611"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        51311
+      ],
+      "glyph_names": [
+        "glyph23978"
+      ],
+      "color": {
+        "r": 66,
+        "g": 118,
+        "b": 135
+      },
+      "hex": "#427687",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        51313
+      ],
+      "glyph_names": [
+        "glyph23979"
+      ],
+      "color": {
+        "r": 251,
+        "g": 249,
+        "b": 249
+      },
+      "hex": "#fbf9f9",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 51311,
+      "layer_index_local": 0,
+      "glyph_name": "glyph23978",
+      "color": {
+        "r": 66,
+        "g": 118,
+        "b": 135
+      },
+      "hex": "#427687",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 51312,
+      "layer_index_local": 1,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 51313,
+      "layer_index_local": 2,
+      "glyph_name": "glyph23979",
+      "color": {
+        "r": 251,
+        "g": 249,
+        "b": 249
+      },
+      "hex": "#fbf9f9",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 51312,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015917941880>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

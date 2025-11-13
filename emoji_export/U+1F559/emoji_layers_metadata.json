@@ -1,0 +1,91 @@
+{
+  "emoji_char": "🕙",
+  "emoji_codepoints": [
+    "U+1F559"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        23358
+      ],
+      "glyph_names": [
+        "glyph13441"
+      ],
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 23357,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23358,
+      "layer_index_local": 1,
+      "glyph_name": "glyph13441",
+      "color": {
+        "r": 86,
+        "g": 52,
+        "b": 40
+      },
+      "hex": "#563428",
+      "matrix": [
+        [
+          0.0,
+          -1.0,
+          987.5
+        ],
+        [
+          1.0,
+          0.0,
+          -290.875
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 23359,
+      "layer_index_local": 2,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 23357,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE5400>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 23359,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015915EE5490>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

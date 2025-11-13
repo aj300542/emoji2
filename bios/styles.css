@@ -1,0 +1,54 @@
+    @font-face {
+        font-family: 'SegoeEmojiOld';
+        src: url('../font/SEGUIEMJ.TTF') format('truetype');
+        /* 回到 font 文件夹 */
+        font-display: swap;
+    }
+
+    body {
+        font-family: 'SegoeEmojiOld', 'Segoe UI', sans-serif;
+    }
+
+    .char {
+        font-family: 'SegoeEmojiOld', 'Segoe UI Emoji', sans-serif;
+    }
+
+
+    .category-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1vh;
+        margin-bottom: 3vh;
+    }
+
+    .category-buttons button {
+        padding: 1.5vh 2.5vh;
+        font-size: 2vh;
+        background-color: #0078d7;
+        color: white;
+        border: none;
+        border-radius: 1vh;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .category-buttons button:hover {
+        background-color: #005ea6;
+    }
+
+    #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        padding: 5vh;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2vh;
+        box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
+        text-align: center;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        font-size: 5vh;
+        pointer-events: none;
+    }

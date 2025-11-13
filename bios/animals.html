@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动物素材展示</title>
+    <link rel="stylesheet" href="../js/emoji-font.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom, #f0fff0, #d0ffd0);
+            padding: 5vh;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 4vh;
+            text-align: center;
+            margin-bottom: 4vh;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(15vh, 1fr));
+            gap: 3vh;
+            padding-top: 2vh;
+        }
+
+        .item {
+            background: #ffffff;
+            border-radius: 2vh;
+            text-align: center;
+            padding: 2vh;
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        .item:hover {
+            transform: scaleY(1.05);
+        }
+
+        .char {
+            font-size: 6vh;
+            margin-bottom: 1vh;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scaleY(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>动物素材展示 🐾</h1>
+
+    <div class="category-buttons">
+        <button id="bios">返回生物主页</button>
+        <button onclick="renderCategory('terrestrial')">陆地动物</button>
+        <button onclick="renderCategory('birds')">鸟类</button>
+        <button onclick="renderCategory('insects')">昆虫</button>
+        <button onclick="renderCategory('aquatic')">水生动物</button>
+        <button onclick="renderCategory('fantasy')">幻想生物</button>
+        <!-- 纯按钮样式（执行函数+新窗口） -->
+        <button id="opennew">捐赠</button>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+
+    <!-- 弹窗 -->
+    <div id="popup">
+        <div id="popup-icon" style="font-size:45vh;"></div>
+        <div id="popup-name" style="font-size: 15vh; margin-top: 2vh;"></div>
+    </div>
+
+    <!-- 主脚本：加载分类数据并渲染 -->
+    <script>
+        const JSON_BASE_PATH = "../json/animals/"; // ✅ 路径前缀抽离
+        const JSON_1 = "terrestrial";
+
+
+    </script>
+
+    <script src="../js/renderCategory.js"></script>
+    <script src="../js/button.js"></script>
+    <script src="../js/pop.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "RoomEnvironment": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/environments/RoomEnvironment.js"
+        }
+        }
+    </script>
+    <script type="module" src="../js/emojiobjs.js"></script>
+
+
+</body>
+
+</html>

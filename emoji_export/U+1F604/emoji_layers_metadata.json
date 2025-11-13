@@ -1,0 +1,62 @@
+{
+  "emoji_char": "😄",
+  "emoji_codepoints": [
+    "U+1F604"
+  ],
+  "layers": [],
+  "original_layers": [
+    {
+      "layer_index_global": 24896,
+      "layer_index_local": 0,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24897,
+      "layer_index_local": 1,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24898,
+      "layer_index_local": 2,
+      "glyph_name": null,
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "hex": "#000000"
+    }
+  ],
+  "diagnostics": [
+    {
+      "layer_index_global": 24896,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x00000159160489B0>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24897,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015916048A10>",
+      "color_idx": 0,
+      "hex": "#000000"
+    },
+    {
+      "layer_index_global": 24898,
+      "paint_repr": "<fontTools.ttLib.tables.otTables.Paint object at 0x0000015916048A70>",
+      "color_idx": 0,
+      "hex": "#000000"
+    }
+  ]
+}

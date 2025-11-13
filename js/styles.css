@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
+    padding: 5vh;
+    color: #333;
+}
+
+h1 {
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 4vh;
+    animation: fadeIn 1s ease-out;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vh, 1fr));
+    gap: 3vh;
+    padding-top: 2vh;
+}
+
+.item {
+    background: #ffffff;
+    border-radius: 2vh;
+    text-align: center;
+    padding: 2vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.item:hover {
+    transform: scaleY(1.05);
+}
+
+.char {
+    font-size: 6vh;
+    margin-bottom: 1vh;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scaleY(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+    margin-bottom: 3vh;
+}
+
+.category-buttons button {
+    padding: 1.5vh 2.5vh;
+    font-size: 2vh;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-buttons button:hover {
+    background-color: #005ea6;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    padding: 5vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2vh;
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 999;
+    transition: transform 0.3s ease;
+    font-size: 5vh;
+    pointer-events: none;
+}
+
+.tags {
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.tag {
+    display: inline-block;
+    margin: 1vh;
+    padding: 1vh 2vh;
+    background-color: #c8e6c9;
+    border-radius: 2vh;
+    color: #2e7d32;
+    text-decoration: none;
+    font-size: 2.5vh;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tag:hover {
+    background-color: #a5d6a7;
+    transform: scale(1.05);
+}

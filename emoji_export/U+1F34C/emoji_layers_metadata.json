@@ -1,0 +1,401 @@
+{
+  "emoji_char": "🍌",
+  "emoji_codepoints": [
+    "U+1F34C"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        1414
+      ],
+      "glyph_names": [
+        "glyph05047"
+      ],
+      "color": {
+        "r": 255,
+        "g": 142,
+        "b": 0
+      },
+      "hex": "#ff8e00",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        1415,
+        1422
+      ],
+      "glyph_names": [
+        "glyph05048",
+        "glyph05055"
+      ],
+      "color": {
+        "r": 255,
+        "g": 228,
+        "b": 180
+      },
+      "hex": "#ffe4b4",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 2
+    },
+    {
+      "layer_index": 2,
+      "merged_layer_indices": [
+        1416
+      ],
+      "glyph_names": [
+        "glyph05049"
+      ],
+      "color": {
+        "r": 255,
+        "g": 226,
+        "b": 101
+      },
+      "hex": "#ffe265",
+      "svg_file": "emoji_layer_02.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 3,
+      "merged_layer_indices": [
+        1417
+      ],
+      "glyph_names": [
+        "glyph05050"
+      ],
+      "color": {
+        "r": 255,
+        "g": 167,
+        "b": 38
+      },
+      "hex": "#ffa726",
+      "svg_file": "emoji_layer_03.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 4,
+      "merged_layer_indices": [
+        1418
+      ],
+      "glyph_names": [
+        "glyph05051"
+      ],
+      "color": {
+        "r": 255,
+        "g": 184,
+        "b": 3
+      },
+      "hex": "#ffb803",
+      "svg_file": "emoji_layer_04.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 5,
+      "merged_layer_indices": [
+        1419
+      ],
+      "glyph_names": [
+        "glyph05052"
+      ],
+      "color": {
+        "r": 135,
+        "g": 91,
+        "b": 84
+      },
+      "hex": "#875b54",
+      "svg_file": "emoji_layer_05.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 6,
+      "merged_layer_indices": [
+        1420
+      ],
+      "glyph_names": [
+        "glyph05053"
+      ],
+      "color": {
+        "r": 254,
+        "g": 228,
+        "b": 180
+      },
+      "hex": "#fee4b4",
+      "svg_file": "emoji_layer_06.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 7,
+      "merged_layer_indices": [
+        1421
+      ],
+      "glyph_names": [
+        "glyph05054"
+      ],
+      "color": {
+        "r": 254,
+        "g": 184,
+        "b": 4
+      },
+      "hex": "#feb804",
+      "svg_file": "emoji_layer_07.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 1414,
+      "layer_index_local": 0,
+      "glyph_name": "glyph05047",
+      "color": {
+        "r": 255,
+        "g": 142,
+        "b": 0
+      },
+      "hex": "#ff8e00",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1415,
+      "layer_index_local": 1,
+      "glyph_name": "glyph05048",
+      "color": {
+        "r": 255,
+        "g": 228,
+        "b": 180
+      },
+      "hex": "#ffe4b4",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1416,
+      "layer_index_local": 2,
+      "glyph_name": "glyph05049",
+      "color": {
+        "r": 255,
+        "g": 226,
+        "b": 101
+      },
+      "hex": "#ffe265",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1417,
+      "layer_index_local": 3,
+      "glyph_name": "glyph05050",
+      "color": {
+        "r": 255,
+        "g": 167,
+        "b": 38
+      },
+      "hex": "#ffa726",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1418,
+      "layer_index_local": 4,
+      "glyph_name": "glyph05051",
+      "color": {
+        "r": 255,
+        "g": 184,
+        "b": 3
+      },
+      "hex": "#ffb803",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1419,
+      "layer_index_local": 5,
+      "glyph_name": "glyph05052",
+      "color": {
+        "r": 135,
+        "g": 91,
+        "b": 84
+      },
+      "hex": "#875b54",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1420,
+      "layer_index_local": 6,
+      "glyph_name": "glyph05053",
+      "color": {
+        "r": 254,
+        "g": 228,
+        "b": 180
+      },
+      "hex": "#fee4b4",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1421,
+      "layer_index_local": 7,
+      "glyph_name": "glyph05054",
+      "color": {
+        "r": 254,
+        "g": 184,
+        "b": 4
+      },
+      "hex": "#feb804",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 1422,
+      "layer_index_local": 8,
+      "glyph_name": "glyph05055",
+      "color": {
+        "r": 255,
+        "g": 228,
+        "b": 180
+      },
+      "hex": "#ffe4b4",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": []
+}

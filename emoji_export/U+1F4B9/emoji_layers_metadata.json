@@ -1,0 +1,249 @@
+{
+  "emoji_char": "💹",
+  "emoji_codepoints": [
+    "U+1F4B9"
+  ],
+  "layers": [
+    {
+      "layer_index": 0,
+      "merged_layer_indices": [
+        21375
+      ],
+      "glyph_names": [
+        "glyph10979"
+      ],
+      "color": {
+        "r": 104,
+        "g": 159,
+        "b": 56
+      },
+      "hex": "#689f38",
+      "svg_file": "emoji_layer_00.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 1,
+      "merged_layer_indices": [
+        21376
+      ],
+      "glyph_names": [
+        "glyph04074"
+      ],
+      "color": {
+        "r": 124,
+        "g": 179,
+        "b": 66
+      },
+      "hex": "#7cb342",
+      "svg_file": "emoji_layer_01.svg",
+      "paths_count": 1
+    },
+    {
+      "layer_index": 2,
+      "merged_layer_indices": [
+        21377,
+        21379
+      ],
+      "glyph_names": [
+        "glyph12052",
+        "glyph12053"
+      ],
+      "color": {
+        "r": 239,
+        "g": 235,
+        "b": 233
+      },
+      "hex": "#efebe9",
+      "svg_file": "emoji_layer_02.svg",
+      "paths_count": 2
+    },
+    {
+      "layer_index": 3,
+      "merged_layer_indices": [
+        21378
+      ],
+      "glyph_names": [
+        "glyph04009"
+      ],
+      "color": {
+        "r": 171,
+        "g": 200,
+        "b": 132
+      },
+      "hex": "#abc884",
+      "svg_file": "emoji_layer_03.svg",
+      "paths_count": 1
+    }
+  ],
+  "original_layers": [
+    {
+      "layer_index_global": 21375,
+      "layer_index_local": 0,
+      "glyph_name": "glyph10979",
+      "color": {
+        "r": 104,
+        "g": 159,
+        "b": 56
+      },
+      "hex": "#689f38",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          4.3119964599609375
+        ],
+        [
+          0.0,
+          1.0,
+          0.375
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21376,
+      "layer_index_local": 1,
+      "glyph_name": "glyph04074",
+      "color": {
+        "r": 124,
+        "g": 179,
+        "b": 66
+      },
+      "hex": "#7cb342",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          4.3119964599609375
+        ],
+        [
+          0.0,
+          1.0,
+          0.375
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21377,
+      "layer_index_local": 2,
+      "glyph_name": "glyph12052",
+      "color": {
+        "r": 239,
+        "g": 235,
+        "b": 233
+      },
+      "hex": "#efebe9",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21378,
+      "layer_index_local": 3,
+      "glyph_name": "glyph04009",
+      "color": {
+        "r": 171,
+        "g": 200,
+        "b": 132
+      },
+      "hex": "#abc884",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          4.3119964599609375
+        ],
+        [
+          0.0,
+          1.0,
+          0.375
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21379,
+      "layer_index_local": 4,
+      "glyph_name": "glyph12053",
+      "color": {
+        "r": 239,
+        "g": 235,
+        "b": 233
+      },
+      "hex": "#efebe9",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "layer_index_global": 21380,
+      "layer_index_local": 5,
+      "glyph_name": "glyph04009",
+      "color": {
+        "r": 171,
+        "g": 200,
+        "b": 132
+      },
+      "hex": "#abc884",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          4.3119964599609375
+        ],
+        [
+          0.0,
+          1.0,
+          0.375
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "diagnostics": []
+}
