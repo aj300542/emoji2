@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const isGitHubPages = window.location.hostname === 'aj300542.github.io';
 
 // 字体路径：本地直接指向font目录，线上加/emoji前缀
-const fontPath = isGitHubPages ? '/emoji/font/SEGUIEMJ.TTF' : './font/SEGUIEMJ.TTF';
+const fontPath = isGitHubPages ? '/emoji/font/NotoColorEmoji-Regular.ttf' : './font/NotoColorEmoji-Regular.ttf';
 
 // 动态创建@font-face样式并插入页面
 const fontStyle = document.createElement('style');

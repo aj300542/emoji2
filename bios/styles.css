@@ -1,6 +1,6 @@
     @font-face {
         font-family: 'SegoeEmojiOld';
-        src: url('../font/SEGUIEMJ.TTF') format('truetype');
+        src: url('../font/NotoColorEmoji-Regular.ttf') format('truetype');
         /* 回到 font 文件夹 */
         font-display: swap;
     }

@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'SegoeEmojiOld';
+    src: url('../font/NotoColorEmoji-Regular.TTF') format('truetype');
+    /* 回到 font 文件夹 */
+    font-display: swap;
+}
+
+body {
+    font-family: 'SegoeEmojiOld', 'Segoe UI', sans-serif;
+}
 body {
     margin: 0;
-    font-family: "Segoe UI", sans-serif;
     background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
     padding: 5vh;
     color: #333;
