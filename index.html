@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>素材分类首页 (Google 主题)</title>
+    <title>素材分类首页 (Google 主题·修复版)</title>
     <!-- 引入 Google Fonts: Noto Sans SC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,18 +16,17 @@
         /* 全局样式重置与基础设定 */
         body {
             margin: 0;
-            /* 使用 Google Fonts 的 Noto Sans SC */
             font-family: 'Noto Sans SC', sans-serif;
             background: #ffffff;
-            /* 谷歌风格的纯白色背景 */
             color: #202124;
-            /* 谷歌常用的深灰色文字 */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            /* 使用 min-height 确保内容少时也占满屏幕 */
+            overflow-x: hidden;
+            /* 防止水平溢出 */
             position: relative;
             padding: 20px;
             box-sizing: border-box;
@@ -52,111 +51,82 @@
             margin-bottom: 8vh;
         }
 
+        /* 保留原始的两个按钮容器布局 */
         .buttons {
             display: flex;
-            gap: 2vh;
-            /* 减小按钮间距 */
+            gap: 6vh;
             z-index: 1;
-            margin-bottom: 4vh;
-            flex-wrap: wrap;
-            /* 允许在小屏幕上换行 */
+            margin-bottom: 6vh;
+            width: 100%;
+            /* 让容器宽度自适应 */
             justify-content: center;
+            /* 按钮居中 */
+            align-items: center;
         }
 
         .category-btn {
             text-decoration: none;
             display: inline-block;
-            padding: 1.5vh 3vh;
-            /* 调整按钮内边距 */
-            font-size: 2.2vh;
+            padding: 3vh 6vh;
+            font-size: 2.5vh;
             border: none;
-            border-radius: 4px;
-            /* 谷歌风格的小圆角 */
+            border-radius: 2vh;
             cursor: pointer;
             color: white;
-            /* 白色文字 */
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            /* 轻微的阴影 */
-            transform: scaleY(0.95);
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+            transform: scaleY(0.8);
             animation: riseUp 1.2s ease-out forwards;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             font-weight: 500;
+            text-align: center;
+            /* 确保文字居中 */
+            flex-shrink: 0;
+            /* 防止按钮被压缩 */
         }
 
-        /* 为不同按钮设置谷歌四色 */
-        .category-btn:nth-child(1) {
+        /* --- 核心修改：使用直接的类名来设置颜色 --- */
+        .btn-blue {
             background-color: #4285F4;
         }
 
-        /* 蓝 */
-        .category-btn:nth-child(2) {
+        .btn-red {
             background-color: #EA4335;
         }
 
-        /* 红 */
-        .category-btn:nth-child(3) {
+        .btn-yellow {
             background-color: #FBBC05;
         }
 
-        /* 黄 */
-        .category-btn:nth-child(4) {
+        .btn-green {
             background-color: #34A853;
         }
 
-        /* 绿 */
-        .category-btn:nth-child(5) {
-            background-color: #673AB7;
-        }
-
-        /* 紫 (新增颜色以区分) */
-        .category-btn:nth-child(6) {
-            background-color: #F45F42;
-        }
-
-        /* 橙 (新增颜色以区分) */
-        .category-btn:nth-child(7) {
-            background-color: #00ACC1;
-        }
-
-        /* 青 (新增颜色以区分) */
-
-        .category-btn:hover {
-            /* hover 时加深颜色并轻微放大 */
-            transform: scale(1.05);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-btn:nth-child(1):hover {
+        /* Hover 效果也针对颜色类名设置，确保覆盖 */
+        .btn-blue:hover {
             background-color: #3367D6;
         }
 
-        .category-btn:nth-child(2):hover {
+        .btn-red:hover {
             background-color: #D93025;
         }
 
-        .category-btn:nth-child(3):hover {
+        .btn-yellow:hover {
             background-color: #F29900;
         }
 
-        .category-btn:nth-child(4):hover {
+        .btn-green:hover {
             background-color: #2D9F46;
         }
 
-        .category-btn:nth-child(5):hover {
-            background-color: #5E35B1;
+        .category-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.15);
         }
 
-        .category-btn:nth-child(6):hover {
-            background-color: #E35542;
-        }
-
-        .category-btn:nth-child(7):hover {
-            background-color: #0097A7;
-        }
-
+        /* 保留原始标题动画 */
         @keyframes zoomIn {
             from {
-                transform: scale(0.9);
+                transform: scale(0.5);
                 opacity: 0;
             }
 
@@ -166,18 +136,14 @@
             }
         }
 
+        /* 保留原始按钮升起动画 */
         @keyframes riseUp {
-            from {
-                transform: translateY(20px) scaleY(0.95);
-                opacity: 0;
-            }
-
             to {
-                transform: translateY(0) scaleY(1);
-                opacity: 1;
+                transform: scaleY(1);
             }
         }
 
+        /* 背景图标层 */
         .floating-icons {
             position: absolute;
             top: 0;
@@ -186,17 +152,29 @@
             height: 100vh;
             display: flex;
             flex-wrap: wrap;
-            align-content: space-around;
-            justify-content: space-around;
-            font-size: 6vh;
-            opacity: 0.05;
-            /* 降低不透明度，使其更像背景纹理 */
+            align-content: flex-start;
+            justify-content: center;
+            font-size: 7.5vh;
+            opacity: 0.08;
             line-height: 1;
-            pointer-events: none;
-            /* 防止遮挡点击 */
+            animation: fadeInIcons 2s ease-out;
             z-index: 0;
+            pointer-events: none;
         }
 
+        @keyframes fadeInIcons {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 0.08;
+                transform: scale(1);
+            }
+        }
+
+        /* 下落 emoji 层 */
         .emoji-rain {
             position: absolute;
             top: 0;
@@ -210,7 +188,7 @@
 
         .emoji {
             position: absolute;
-            font-size: 4vh;
+            font-size: 5vh;
             animation: fall linear infinite;
             opacity: 0;
         }
@@ -221,17 +199,45 @@
                 opacity: 0;
             }
 
-            10% {
-                opacity: 0.7;
-            }
-
-            90% {
-                opacity: 0.7;
-            }
-
             100% {
                 transform: translateY(120vh) rotate(360deg);
-                opacity: 0;
+                opacity: 1;
+            }
+        }
+
+        /* --- 核心改动：媒体查询 - 适配竖屏 --- */
+        @media (orientation: portrait) {
+            body {
+                /* 竖屏时增加顶部内边距，防止内容顶到边缘 */
+                padding-top: 40px;
+            }
+
+            h1 {
+                /* 竖屏时减小标题下方的间距 */
+                margin-bottom: 2vh;
+                /* 可选：减小标题字体大小 */
+                font-size: 3.5vh;
+            }
+
+            .buttons {
+                /* 1. 允许按钮在必要时换行 */
+                flex-wrap: wrap;
+                /* 2. 减小按钮之间的间距 */
+                gap: 2vh;
+                /* 减小按钮组下方的间距 */
+                margin-bottom: 3vh;
+            }
+
+            .category-btn {
+                /* 3. 减小按钮的左右内边距，使其变窄 */
+                padding: 2.5vh 3vh;
+                /* 可选：减小按钮字体大小 */
+                font-size: 2vh;
+                /* 让按钮在换行后能均匀分布宽度 */
+                width: calc(35% - 1vh);
+                /* 宽度为50%减去一半的gap，确保两行两列时对齐 */
+                max-width: 180px;
+                /* 设置一个最大宽度，防止在特别宽的平板竖屏上过宽 */
             }
         }
     </style>
@@ -241,16 +247,17 @@
     <h1>选择分类进入谷歌emoji素材世界 ✨</h1>
     <h1>单击复制表情😊 双击下载3D文档😙</h1>
     <div class="buttons">
-        <a href="bios.html" class="category-btn">🐾 生物</a>
-        <a href="objects.html" class="category-btn">🧺 物品</a>
-        <a href="knowledge.html" class="category-btn">📚 知识</a>
+        <a href="bios.html" class="category-btn btn-yellow">🐾 生物</a>
+        <a href="objects.html" class="category-btn btn-red">🧺 物品</a>
+        <a href="knowledge.html" class="category-btn btn-blue">📚 知识</a>
+        <a href="bios/expressions.html" class="category-btn btn-yellow">🤪 表情</a>
     </div>
     <div class="buttons">
-        <a href="index2.html" class="category-btn" target="_blank" rel="noopener noreferrer">📐 画画</a>
-        <a href="https://aj300542.github.io/download.html" class="category-btn" target="_blank"
+        <a href="index2.html" class="category-btn btn-green" target="_blank" rel="noopener noreferrer">📐 画画</a>
+        <a href="https://aj300542.github.io/download.html" class="category-btn btn-blue" target="_blank"
             rel="noopener noreferrer">🍎 支持aj300542</a>
-        <a href="bios/expressions.html" class="category-btn">🤪 表情</a>
-        <a href="http://aj300542.github.io/emoji/index.html" class="category-btn">🌐 返回主网站</a>
+        <a href="search.html" class="category-btn btn-green">🔍 Emoji搜索</a>
+        <a href="http://aj300542.github.io/emoji/index.html" class="category-btn btn-red">🌐 返回主网站</a>
     </div>
     <div class="emoji-rain"></div>
 
